@@ -8,7 +8,7 @@
     "dev": "node main.js"
   },
   "keywords": ["discord", "music", "bot"],
-  "author": "Saaransh_Xd",
+  "author": ["Saaransh_Xd", "SaaranshDx"],
   "license": "MIT",
   "dependencies": {
     "@discordjs/opus": "^0.10.0",

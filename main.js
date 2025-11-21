@@ -22,7 +22,7 @@ const client = new Client({
 
 const queues = new Map();
 
-// Queue structure for each server
+
 class ServerQueue {
   constructor(textChannel, voiceChannel) {
     this.textChannel = textChannel;
@@ -91,11 +91,10 @@ async function play(message, args) {
     
     let songInfo;
     
-    // Check if it's a YouTube URL
+    
     if (ytdl.validateURL(query)) {
       songInfo = await ytdl.getInfo(query);
     } else {
-      // Search YouTube
       const searchResults = await ytSearch.GetListByKeyword(query, false, 1);
       if (!searchResults.items || searchResults.items.length === 0) {
         return message.reply('❌ No results found!');
@@ -114,13 +113,13 @@ async function play(message, args) {
     };
 
     if (!serverQueue) {
-      // Create new queue
+     
       serverQueue = new ServerQueue(message.channel, voiceChannel);
       queues.set(message.guild.id, serverQueue);
       serverQueue.songs.push(song);
 
       try {
-        // Join voice channel
+      
         const connection = joinVoiceChannel({
           channelId: voiceChannel.id,
           guildId: message.guild.id,
@@ -130,7 +129,8 @@ async function play(message, args) {
         serverQueue.connection = connection;
         connection.subscribe(serverQueue.player);
 
-        // Handle connection state changes
+        
+    
         connection.on(VoiceConnectionStatus.Disconnected, async () => {
           try {
             await Promise.race([

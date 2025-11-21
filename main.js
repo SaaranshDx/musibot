@@ -27,7 +27,7 @@ const queues = new Map();
 class ServerQueue {
   constructor(textChannel, voiceChannel) {
     this.textChannel = textChannel;
-    this.voiceChannel = voiceChannel;
+    this.voiceChannel = voiceChannel; 
     this.connection = null;
     this.songs = [];
     this.player = createAudioPlayer();

@@ -1,0 +1,21 @@
+{
+  "name": "musibot",
+  "version": "0.01",
+  "description": "A Discord music bot",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "dev": "node main.js"
+  },
+  "keywords": ["discord", "music", "bot"],
+  "author": "Saaransh_Xd",
+  "license": "MIT",
+  "dependencies": {
+    "@discordjs/opus": "^0.10.0",
+    "@discordjs/voice": "^0.19.0",
+    "discord.js": "^14.25.0",
+    "dotenv": "^17.2.3",
+    "youtube-search-api": "^2.0.1",
+    "ytdl-core": "^4.11.5"
+  }
+}
